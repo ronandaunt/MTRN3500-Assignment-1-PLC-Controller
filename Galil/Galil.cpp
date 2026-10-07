@@ -9,7 +9,6 @@ using namespace System;
 // default Galil address as described in the assignment spec.
 Galil::Galil() : Functions(new EmbeddedFunctions()), ownFunctions(true), g(0) {
 
-	//TODO: USe simulator toggle for EmbeddedFunctions call?
 
 	// open Galil connection: if error in opening connection delete Functions object as we own it
 	try {
@@ -326,7 +325,6 @@ double Galil::getKd() {
 }
 
 // OPERATOR OVERLOADS
-// TODO: complete this function.
 // Operator overload for '<<' operator. So the user can say cout << Galil;
 // This function should print out the output of GInfo and GVersion, with
 // two newLines after each.
@@ -350,7 +348,6 @@ std::ostream& operator<<(std::ostream& output, Galil& galil) {
 	return output;
 }
 
-//TODO: Complete this function.
 // Copy assignment operator. This acts in the same way as the copy constructor
 // (refer above for details).
 Galil& Galil::operator=(const Galil& other) {
