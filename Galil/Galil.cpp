@@ -204,7 +204,6 @@ bool Galil::DigitalBitInput(uint8_t bit) {
 bool Galil::CheckSuccessfulWrite() {
 
 	for (int i = 0; readBuffer[i] != '\0' && i < 16; i++) {
-		std::cout << int(readBuffer[i]) << " ";
 
 		if (readBuffer[i] == ':') { return true; }
 	}
@@ -223,6 +222,10 @@ float Galil::AnalogInput(uint8_t channel) {
 
 	return std::stof(readBuffer);
 }	
+
+// todo : conformance mode off?
+// general: toolset to v143 from 145 (to work on lab computer) (do on lab comp)
+// program speed from analog input to analog output
 
 
 // Write to any channel of the Galil, send voltages as
